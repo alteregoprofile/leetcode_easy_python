@@ -1,0 +1,12 @@
+#jewels and stones question 
+#so the first is, stone can be jewel
+#we want the output to be the number that holds value which is a total sum of STONES THAT ARE IN JEWELS!!!
+#first we will need a counter to hold the value of this 
+#we will have to loop such that for every item in stone, if it exists in jewel the counter should be increamented
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        total_jewels = 0
+        for item in stones:
+            if item in jewels:
+                total_jewels+=1
+        return total_jewels
