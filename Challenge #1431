@@ -1,0 +1,17 @@
+class Solution:
+    def kidsWithCandies(self, candies, extraCandies):
+        Lenghtoflistcandies = len(candies)
+        newlist = []
+        for item in range (Lenghtoflistcandies):
+            if candies[item]+extraCandies >= max(candies):
+                newlist.append(True)
+            else:
+                newlist.append(False)
+        return newlist
+    ''' 1. Find out how much you will have to loop hence tale length of the list candies
+        2. create a new list which will will be then used for getting output 
+        3. then we loop through entire length of candies 
+        4.whenever extra candy but candy becomes more than max no. of candies you add true in the new list else you just add false
+       
+        '''   
+            
