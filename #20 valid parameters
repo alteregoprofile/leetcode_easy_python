@@ -1,0 +1,35 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack_status = []
+        allowed_bracket_types = {"{":"}", "[":"]", "(":")"}
+        open_par = set(["(", "[", "{"])
+        
+        for parenthesis_input in s:
+            
+            if parenthesis_input in open_par:
+                stack_status.append(parenthesis_input)
+            elif stack_status and parenthesis_input== allowed_bracket_types [stack_status [-1]]:
+                stack_status.pop()
+            else:
+                return False
+        return stack_status == []
+        
+        
+        ANOTHER APPROACH
+        
+        
+       class Solution(object):
+    def isValid(self, s: str) -> bool:
+        stack_status = []
+        lookup = {"}":"{", "]":"[", ")":"("}
+#         open_par = set(["(", "[", "{"])
+        
+        for parenthesis_input in s:
+            
+            if parenthesis_input in lookup.values():
+                stack_status.append(parenthesis_input)
+            elif stack_status and lookup[parenthesis_input]== stack_status [-1]:
+                stack_status.pop()
+            else:
+                return False
+        return stack_status == []
